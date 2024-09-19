@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>BS-Mamba: Band-split Structured State Space Duality for Music Source Separation</title>
+<meta name="generator" content="Jekyll v3.9.0">
+<meta property="og:title" content="TODO: title">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://zzhdzdz.github.io/BS-Mamba/">
+<meta property="og:url" content="https://zzhdzdz.github.io/BS-Mamba/">
+<meta name="twitter:card" content="summary">
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="./bsmamba_files/style.css">
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
+    <section class="page-header">
+      
+    </section>
+
+<section class="main-content">
+      <h1 id=""><center>BS-Mamba: Band-split Structured State Space Duality for Music Source Separation
+	  </center></h1>
+
+
+<h2>0. Contents</h2>
+<ol>
+  <li><a href="https://zzhdzdz.github.io/BS-Mamba/#abstract">Abstract</a></li>
+  <li><a href="zzhdzdz.github.io/BS-Mamba/#samples">Samples of MUSDB18 test set</a></li>
+</ol>
+
+<br><br>
+<h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
+<p> 
+  Recent years, with the ongoing development of deep learning, data-driven approaches have achieved remarkable success in music source separation. However, RNN-based methods have limited modeling capabilities, and Transformer-based methods have high computational complexity, limiting their practical applications. Due to the robust performance and the reduced computational requirements, Mamba has recently attracted significant attention. In this paper, we proposed a state space based model, namely BS-Mamba for music source separation. The BS-Roformer was adopted as the foundational framework and the Rope-Transformer within the framework was replaced with Mamba blocks. Specifically, we designed a T-F Mamba structure that combines Mamba block with multi-head self-attention, broadening contextual modeling capabilities. Experiment results show that BS-Mamba presents significant advantages in music source separation. We achieved comparable performance with only 50\% of parameters compared to BS-Roformer. The proposed model achieves a signal-to-distortion (SDR) of 9.96dB on the MUSDB18-HQ dataset without using extra data.
+  <br>
+	<center><img src="./bsmamba_files/1.png" style="height:300px"/></center>
+<br><br>
+
+
+
+
+<h2>Samples of MUSDB18 test set<a name="samples"></a></h2>
+<h3>BKS - Bulldozer</h3>
+mixture:<br>
+<audio src="exp/wav/BKS - Bulldozer_label/mixture.wav" controls="" preload=""></audio>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Stems</strong></th>
+      <th style="text-align: center"><strong>SCNet</strong></th>
+      <th style="text-align: center"><strong>BS-Mamba</strong></th>
+      <th style="text-align: center"><strong>Label</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Vocals</td>
+      <td style="text-align: left"><audio src="exp/wav/BKS - Bulldozer_scnet/vocals.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/BKS - Bulldozer_bsmamba/vocals.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/BKS - Bulldozer_label/vocals.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Bass</td>
+      <td style="text-align: left"><audio src="exp/wav/BKS - Bulldozer_scnet/bass.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/BKS - Bulldozer_bsmamba/bass.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/BKS - Bulldozer_label/vocals.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Drums</td>
+      <td style="text-align: left"><audio src="exp/wav/BKS - Bulldozer_scnet/drums.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/BKS - Bulldozer_bsmamba/drums.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/BKS - Bulldozer_label/drums.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Other</td>
+      <td style="text-align: left"><audio src="exp/wav/BKS - Bulldozer_scnet/other.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/BKS - Bulldozer_bsmamba/other.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/BKS - Bulldozer_label/other.wav" controls="" preload=""></audio></td>
+    </tr>
+  </tbody>
+</table>
+<br><br>
+ 
+<h3>Enda Reilly - Cur An Long Ag Seol</h3>
+mixture:<br>
+<audio src="exp/wav/Enda Reilly - Cur An Long Ag Seol_label/mixture.wav" controls="" preload=""></audio>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Stems</strong></th>
+      <th style="text-align: center"><strong>SCNet</strong></th>
+      <th style="text-align: center"><strong>BS-Mamba</strong></th>
+      <th style="text-align: center"><strong>Label</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Vocals</td>
+      <td style="text-align: left"><audio src="exp/wav/Enda Reilly - Cur An Long Ag Seol_scnet/vocals.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Enda Reilly - Cur An Long Ag Seol_bsmamba/vocals.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Enda Reilly - Cur An Long Ag Seol_label/vocals.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Bass</td>
+      <td style="text-align: left"><audio src="exp/wav/Enda Reilly - Cur An Long Ag Seol_scnet/bass.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Enda Reilly - Cur An Long Ag Seol_bsmamba/bass.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Enda Reilly - Cur An Long Ag Seol_label/vocals.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Drums</td>
+      <td style="text-align: left"><audio src="exp/wav/Enda Reilly - Cur An Long Ag Seol_scnet/drums.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Enda Reilly - Cur An Long Ag Seol_bsmamba/drums.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Enda Reilly - Cur An Long Ag Seol_label/drums.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Other</td>
+      <td style="text-align: left"><audio src="exp/wav/Enda Reilly - Cur An Long Ag Seol_scnet/other.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Enda Reilly - Cur An Long Ag Seol_bsmamba/other.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Enda Reilly - Cur An Long Ag Seol_label/other.wav" controls="" preload=""></audio></td>
+    </tr>
+  </tbody>
+</table>
+<br><br>
+
+
+<h3>Louis Cressy Band - Good Time</h3>
+mixture:<br>
+<audio src="exp/wav/Louis Cressy Band - Good Time_label/mixture.wav" controls="" preload=""></audio>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Stems</strong></th>
+      <th style="text-align: center"><strong>SCNet</strong></th>
+      <th style="text-align: center"><strong>BS-Mamba</strong></th>
+      <th style="text-align: center"><strong>Label</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Vocals</td>
+      <td style="text-align: left"><audio src="exp/wav/Louis Cressy Band - Good Time_scnet/vocals.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Louis Cressy Band - Good Time_bsmamba/vocals.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Louis Cressy Band - Good Time_label/vocals.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Bass</td>
+      <td style="text-align: left"><audio src="exp/wav/Louis Cressy Band - Good Time_scnet/bass.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Louis Cressy Band - Good Time_bsmamba/bass.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Louis Cressy Band - Good Time_label/vocals.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Drums</td>
+      <td style="text-align: left"><audio src="exp/wav/Louis Cressy Band - Good Time_scnet/drums.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Louis Cressy Band - Good Time_bsmamba/drums.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Louis Cressy Band - Good Time_label/drums.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Other</td>
+      <td style="text-align: left"><audio src="exp/wav/Louis Cressy Band - Good Time_scnet/other.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Louis Cressy Band - Good Time_bsmamba/other.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/Louis Cressy Band - Good Time_label/other.wav" controls="" preload=""></audio></td>
+    </tr>
+  </tbody>
+</table>
+<br><br>
+
+
+
+
+</table>
+      <footer class="site-footer">
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com/">GitHub Pages</a>.</span>
+      </footer>
+    </section>
+
+</body></html>
